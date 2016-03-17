@@ -1,1 +1,33 @@
 <h1>Series</h1>
+
+<div ng-show="error" class="alert alert-error" role="alert">
+	Ha ocurrido un error al cargar las series
+</div>
+
+<div ng-show="series.length === 0 && !loading && !error" class="alert alert-info" role="alert">
+	No series here.
+</div>
+
+<div ng-show="loading" class="text-center">
+	<i class="fa fa-spinner fa-spin fa-3x"></i>
+</div>
+
+<table ng-if="series.length > 0" class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Poster</th>
+			<th>Title</th>
+			<th>Rating</th>
+			<th>Year</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="serie in series">
+			<td><img ng-src="{{serie.poster_url}}" alt="{{serie.title}}" width=100></td>
+			<td>{{serie.title}}</td>
+			<td>{{serie.rating}}</td>
+			<td>{{serie.date}}</td>
+		</tr>
+	</tbody>
+</table>
+<button ng-click="series=[]">Vaciar</button>

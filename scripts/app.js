@@ -7,6 +7,7 @@ angular.module("MovieDbApp", ["ngRoute"]).config(
             controller:"MoviesController",
             templateUrl: "views/movies.html"
         }).when("/series", {
+            controller:"SeriesController",
             templateUrl: "views/series.html"
         }).when("/people", {
             templateUrl: "views/people.html"
