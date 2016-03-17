@@ -1,5 +1,5 @@
 <h1>Movies</h1>
-<div ng-show="movies.length === 0" class="alert alert-info" role="alert">
+<div ng-show="movies.length === 0 && !loading" class="alert alert-info" role="alert">
     No movies here.
 </div>
 <div ng-show="loading" class="text-center">
@@ -18,8 +18,8 @@
         <tr ng-repeat="movie in movies">
             <td><img ng-src="{{movie.poster_url}}" width="5%"/></td>
             <td>{{movie.title}}</td>
-            <td>{{movie.rate}}</td>
-            <td>{{movie.year}}</td>
+            <td>{{movie.rating}}</td>
+            <td>{{movie.date}}</td>
         </tr>
     </tbody>
 
